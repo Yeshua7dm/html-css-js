@@ -18,15 +18,17 @@ data = [
 ];
 
 function interestCalculator(anArray) {
-  //console.log(anArray);
   let rate,
     interestData = [];
-  anArray.forEach(data => {
+
+  for (const data of anArray) {
     if (data.principal >= 2500 && data.time > 1 && data.time < 3) {
       rate = 3;
+      // principal is greater than or equal to 2500 and the time is greater than or equal to 3
     } else if (data.principal >= 2500 && data.time >= 3) {
       rate = 4;
-    } else if (data.principal < 2500 && data.time <= 2) {
+      // principal is less than 2500 or the time is less than or equal to 1
+    } else if (data.principal < 2500 || data.time <= 1) {
       rate = 2;
     } else {
       rate = 1;
@@ -41,7 +43,7 @@ function interestCalculator(anArray) {
     investment.interest = interestGained;
 
     interestData.push(investment);
-  });
+  }
 
   console.log(interestData);
   return interestData;
