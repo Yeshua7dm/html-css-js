@@ -1,20 +1,20 @@
 data = [
   {
     principal: 2500,
-    time: 1.8
+    time: 1.8,
   },
   {
     principal: 1000,
-    time: 5
+    time: 5,
   },
   {
     principal: 3000,
-    time: 1
+    time: 1,
   },
   {
     principal: 2000,
-    time: 3
-  }
+    time: 3,
+  },
 ];
 
 function interestCalculator(anArray) {
@@ -22,12 +22,11 @@ function interestCalculator(anArray) {
     interestData = [];
 
   for (const data of anArray) {
+    // determine the rate
     if (data.principal >= 2500 && data.time > 1 && data.time < 3) {
       rate = 3;
-      // principal is greater than or equal to 2500 and the time is greater than or equal to 3
     } else if (data.principal >= 2500 && data.time >= 3) {
       rate = 4;
-      // principal is less than 2500 or the time is less than or equal to 1
     } else if (data.principal < 2500 || data.time <= 1) {
       rate = 2;
     } else {
@@ -42,6 +41,7 @@ function interestCalculator(anArray) {
     investment.time = data.time;
     investment.interest = interestGained;
 
+    // push investment into the interestData array
     interestData.push(investment);
   }
 
